@@ -1,19 +1,20 @@
+// esta es la variable global que almacenan la base de datos (array) y el dinero recaudado.
 let inventario = [];
         let totalVentasDia = 0;
-
+//  la funcion Captura los datos y los guarda como objetos en el inventario
         function registrarMedicamento() {
             let nombre = prompt("Nombre del medicamento:").toLowerCase();
             let cantidad = parseInt(prompt("Cantidad disponible:"));
             let precio = parseFloat(prompt("Precio unitario:"));
-
+// Validación: Solo guarda si los números ingresados son válidos (no son NaN)
             if (!isNaN(cantidad) && !isNaN(precio)) {
                 inventario.push({ nombre, cantidad, precio });
                 console.log(`Registrado: ${nombre}`);
-            } else {
+            } else { 
                 alert("Datos inválidos. Intenta de nuevo.");
             }
         }
-
+//FUNCIÓN CONSULTAR: Muestra lo que hay en el stock usando una tabla en consola
         function consultarInventario() {
             console.log("\n--- INVENTARIO ACTUAL ---");
             if (inventario.length === 0) {
