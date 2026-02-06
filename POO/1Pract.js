@@ -1,12 +1,12 @@
-// esta es la variable global que almacenan la base de datos (array) y el dinero recaudado.
+// Esta es la variable global que almacenan la base de datos (array) y el dinero recaudado.
 let inventario = [];
         let totalVentasDia = 0;
-//  la funcion Captura los datos y los guarda como objetos en el inventario
+        //  la funcion Captura los datos y los guarda como objetos en el inventario
         function registrarMedicamento() {
             let nombre = prompt("Nombre del medicamento:").toLowerCase();
             let cantidad = parseInt(prompt("Cantidad disponible:"));
             let precio = parseFloat(prompt("Precio unitario:"));
-// Validación: Solo guarda si los números ingresados son válidos (no son NaN)
+         // Validación: Solo guarda si los números ingresados son válidos (no son NaN)
             if (!isNaN(cantidad) && !isNaN(precio)) {
                 inventario.push({ nombre, cantidad, precio });
                 console.log(`Registrado: ${nombre}`);
@@ -14,7 +14,7 @@ let inventario = [];
                 alert("Datos inválidos. Intenta de nuevo.");
             }
         }
-//FUNCIÓN CONSULTAR: Muestra lo que hay en el stock usando una tabla en consola
+        //Esta function Muestra lo que hay en el stock usando una tabla en consola
         function consultarInventario() {
             console.log("\n--- INVENTARIO ACTUAL ---");
             if (inventario.length === 0) {
@@ -23,7 +23,7 @@ let inventario = [];
                 console.table(inventario);
             }
         }
-
+         //La funcion venderMedicamento busca un producto, verifica stock y actualiza las cuentas
         function venderMedicamento() {
             let buscar = prompt("¿Qué medicamento desea vender?").toLowerCase();
             let producto = inventario.find(p => p.nombre === buscar);
@@ -47,7 +47,7 @@ let inventario = [];
             console.log(`\n TOTAL RECAUDADO: $${totalVentasDia.toFixed(2)}`);
         }
 
-        // Bucle principal
+        // Bucle principal mantienene el sistema activo hasta que el usuario decida salir
         let continuar = true;
         while (continuar) {
             let menu = prompt(
@@ -59,7 +59,7 @@ let inventario = [];
                 "5. Salir\n\n" +
                 "Escribe el número de la opción:"
             );
-
+// El switch case maneja las opciones del menú, llamando a la función correspondiente según la elección del usuario
             switch (menu) {
                 case '1': registrarMedicamento(); break;
                 case '2': consultarInventario(); break;
