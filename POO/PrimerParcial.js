@@ -1,12 +1,12 @@
 const autoPrincipal = {
-    marca: "Toyota",
-    modelo: "Corolla",
+    marca: "Daihatsu",
+    modelo: "centra",
     ruedas: 4,
     arrancar() {
-        console.log(`${this.marca}: Arrancó`);
+        console.log(`${this.marca}: Arrancó sin ningun problema`);
     },
     frenar() {
-        console.log(`${this.marca}: Freno`);
+        console.log(`${this.marca}: Freno un poco brusco`);
     }
 };
 
@@ -22,10 +22,10 @@ function Auto(marca, modelo, ruedas, year) {
     this.ruedas = ruedas;
     this.year = year;
     this.arrancar = function () {
-        console.log(`${this.marca}: Arrancó`);
+        console.log(`${this.marca}: Arrancó con mucho ruido`);
     };
     this.frenar = function () {
-        console.log(`${this.marca}: Freno`);
+        console.log(`${this.marca}: los frenos no funcionan muy bien`);
     };
 }
 
